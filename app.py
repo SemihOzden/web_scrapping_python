@@ -13,5 +13,5 @@ def run():
     data = response.text
     soup = BeautifulSoup(data, 'html.parser')
     results = soup.body.find_all(string=re.compile('.*{0}.*'.format(userText)), recursive=True)
-
+    
     print('Found the word "{0}" {1} times\n'.format(userText, len(results)))
